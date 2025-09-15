@@ -1,0 +1,77 @@
+<% content_for :title, "Maison Hossegor — Location saisonnière" %>
+
+<!-- HERO -->
+<section class="relative">
+  <div class="absolute inset-0">
+    <div class="h-full w-full bg-cover bg-center" style="background-image: url('<%= asset_path('hero.jpg') %>');"></div>
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
+  <div class="relative container mx-auto px-4 py-24 md:py-40 text-white">
+    <h1 class="text-3xl md:text-5xl font-bold max-w-3xl">Maison de vacances à Hossegor, entre océan et lac</h1>
+    <p class="mt-4 md:text-lg max-w-2xl">Capacité 9 personnes • 4 chambres • Jardin • Parking • WiFi</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <%= link_to "Disponibilités & tarifs", "https://www.airbnb.fr/rooms/42052163", target: "_blank", rel: "noopener", class: "rounded-xl bg-white text-gray-900 px-5 py-3 font-medium shadow hover:shadow-md" %>
+      <%= link_to "Me contacter", contact_path, class: "rounded-xl bg-transparent border border-white px-5 py-3 font-medium hover:bg-white/10" %>
+    </div>
+  </div>
+</section>
+
+<!-- ATOUTS -->
+<section id="atouts" class="container mx-auto px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-semibold">Les atouts de la maison</h2>
+  <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="p-6 border rounded-2xl">
+      <p class="font-medium">Emplacement</p>
+      <p class="text-sm text-gray-600 mt-1">Proche plages, lac, centre d’Hossegor</p>
+    </div>
+    <div class="p-6 border rounded-2xl">
+      <p class="font-medium">Confort</p>
+      <p class="text-sm text-gray-600 mt-1">4 chambres, 9 couchages, literie de qualité</p>
+    </div>
+    <div class="p-6 border rounded-2xl">
+      <p class="font-medium">Extérieur</p>
+      <p class="text-sm text-gray-600 mt-1">Jardin clos, terrasse, mobilier</p>
+    </div>
+    <div class="p-6 border rounded-2xl">
+      <p class="font-medium">Pratique</p>
+      <p class="text-sm text-gray-600 mt-1">Parking privé, local vélos</p>
+    </div>
+    <div class="p-6 border rounded-2xl">
+      <p class="font-medium">Équipements</p>
+      <p class="text-sm text-gray-600 mt-1">WiFi, TV, cuisine équipée, lave linge</p>
+    </div>
+    <div class="p-6 border rounded-2xl">
+      <p class="font-medium">Familles</p>
+      <p class="text-sm text-gray-600 mt-1">Lit bébé/chaise</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie" class="container mx-auto px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-semibold">Galerie</h2>
+  <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+    <%= image_tag 'house_1.jpg', class: 'w-full h-48 md:h-56 object-cover rounded-xl shadow', loading: 'lazy', alt: 'Salon lumineux' %>
+    <%= image_tag 'house_2.jpg', class: 'w-full h-48 md:h-56 object-cover rounded-xl shadow', loading: 'lazy', alt: 'Terasse spacieuse' %>
+    <%= image_tag 'house_3.jpg', class: 'w-full h-48 md:h-56 object-cover rounded-xl shadow', loading: 'lazy', alt: 'Chambre enfants' %>
+    <%= image_tag 'house_4.jpg', class: 'w-full h-48 md:h-56 object-cover rounded-xl shadow', loading: 'lazy', alt: 'Séjour cuisine salon lumineux' %>
+    <%= image_tag 'house_5.jpg', class: 'w-full h-48 md:h-56 object-cover rounded-xl shadow', loading: 'lazy', alt: 'Jardin clos et vaste terrasse' %>
+    <%= image_tag 'house_6.jpg', class: 'w-full h-48 md:h-56 object-cover rounded-xl shadow', loading: 'lazy', alt: 'Terrasse en bois avec mobilier de jardin barbecue et plancha' %>
+  </div>
+
+  <div class="mt-8">
+    <%= link_to "Voir plus de photos sur Airbnb", "https://www.airbnb.fr/rooms/42052163", target: "_blank", rel: "noopener", class: "underline" %>
+  </div>
+</section>
+
+<!-- BLOC CTA FINAL -->
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-xl md:text-2xl font-semibold">Prêt à réserver ?</h3>
+    <p class="text-gray-600 mt-2">Consulte les disponibilités et les tarifs sur les plateformes.</p>
+    <div class="mt-6 flex justify-center gap-3">
+      <%= link_to "Airbnb", "https://www.airbnb.fr/rooms/42052163", target: "_blank", rel: "noopener", class: "rounded-xl bg-black text-white px-5 py-3 font-medium" %>
+      <%= link_to "Abritel", "https://www.abritel.fr/location-vacances/p46967095", target: "_blank", rel: "noopener", class: "rounded-xl border border-gray-300 px-5 py-3 font-medium hover:bg-white" %>
+    </div>
+  </div>
+</section>

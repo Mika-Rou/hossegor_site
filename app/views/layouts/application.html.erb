@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= content_for?(:title) ? yield(:title) : "Maison Hossegor — Location saisonnière" %></title>
+    <meta name="description" content="Maison de vacances à Soorts-Hossegor. 6 personnes, proche océan et lac, jardin, parking, Wi‑Fi. Voir disponibilités et tarifs.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Maison Hossegor — Location saisonnière">
+    <meta property="og:description" content="Maison de vacances à Soorts-Hossegor. 6 personnes, proche océan et lac, jardin, parking, Wi‑Fi.">
+    <meta property="og:image" content="<%= image_url('og-maison.jpg') rescue '' %>">
+    <meta property="og:locale" content="fr_FR">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="canonical" href="<%= request.original_url %>">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="min-h-screen flex flex-col bg-white text-gray-900">
+    <!-- NAVBAR -->
+    <header class="border-b border-gray-100">
+      <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="text-lg font-semibold">Maison Hossegor</a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#atouts" class="hover:underline">La maison</a>
+          <a href="#galerie" class="hover:underline">Galerie</a>
+          <a href="/contact" class="hover:underline">Contact</a>
+          <a href="https://www.airbnb.fr/rooms/42052163" target="_blank" rel="noopener" class="inline-block rounded-xl px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-400">Disponibilités & tarifs</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- CONTENU -->
+    <main class="flex-1">
+      <%= yield %>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-100">
+      <div class="container mx-auto px-4 py-8 grid md:grid-cols-3 gap-6 text-sm">
+        <div>
+          <p class="font-semibold">Maison Hossegor</p>
+          <p>Soorts-Hossegor (Landes)</p>
+        </div>
+        <div>
+          <p class="font-semibold">Contact</p>
+          <p>Email : <a class="underline" href="mailto:rougermck@gmail.com">rougermck@gmail.com</a></p>
+        </div>
+        <div>
+          <p><a class="underline" href="/mentions">Mentions légales</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
