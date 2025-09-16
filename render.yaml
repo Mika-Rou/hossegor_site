@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: hossegor-site
+    runtime: ruby
+    plan: starter
+    autoDeploy: true
+    region: frankfurt
+    buildCommand: SECRET_KEY_BASE_DUMMY=1 bundle install && SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
+    startCommand: bundle exec puma -C config/puma.rb
+    postDeployCommand: bundle exec rails db:prepare
+    envVars:
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_LOG_TO_STDOUT
+        value: "true"
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
+      - key: RAILS_MAX_THREADS
+        value: "5"
+      - key: WEB_CONCURRENCY
+        value: "1"
+      # Set these in Render after creating the Neon DB. DATABASE_URL must include sslmode=require
+      - key: DATABASE_URL
+        value: ""
+      - key: RAILS_MASTER_KEY
+        value: ""
