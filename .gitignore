@@ -11,6 +11,9 @@
 /.env*
 !/.env*.erb
 
+# Ignore vendor/bundle
+/vendor/bundle
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
