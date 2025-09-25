@@ -1,0 +1,92 @@
+<section id="galerie" class="container mx-auto px-4 py-16">
+  <h1 class="text-2xl md:text-3xl font-semibold">Galerie</h1>
+  <% sections = [
+    {
+      id: "exterieurs",
+      title: "Terrasse extérieure sans vis à vis",
+      photos: [
+        {file: "hero.jpeg", alt: "Maison de location Hossegor proche centre et lac"},
+        {file: "terrasse-vue-globale-maison-hossegor-plage.jpeg", alt: "Vaste terrasse exterieur en bois, parking privé"},
+        {file: "terrasse-espace-detente-maison-hossegor-plage.jpeg", alt: "Espace détente sur la terrasse, large parasol"},
+        {file: "og-maison.jpeg", alt: "Espace détente extérieur"},
+        {file: "terrasse-espace-repas-exterieur-maison-hossegor-lac-angle-1.jpeg", alt: "Espace repas extérieur côté lac"},
+        {file: "terrasse-espace-repas-exterieur-maison-hossegor-lac-angle-2.jpeg", alt: "Espace repas extérieur sans vis à vis"},
+        {file: "terrasse-plancha-maison-hossegor-plage.jpeg", alt: "Plancha"}
+      ]
+    },
+    {
+      id: "sejour",
+      title: "Cuisine & Séjour",
+      photos: [
+        {file: "salon-canape-hossegor.jpeg", alt: "Salon lumineux avec canapé"},
+        {file: "cuisine-ouverte-espace-repas.jpeg", alt: "Cuisine ouverte et espace repas"},
+        {file: "cuisine-vue-evier-maison-hossegor.jpeg", alt: "Cuisine ouverte toute équipée lumineuse"},
+        {file: "cuisine-plan-travail-maison-hossegor.jpeg", alt: "Cuisine avec évier jacob Delafon et plan de travail en chêne"},
+        {file: "cuisine-four-maison-hossegor.jpeg", alt: "Cuisine équipée Frigo, congélateur, four et micro-onde"},
+        {file: "cuisine-espace-cuisson-maison-hossegor.jpeg", alt: "Plaque à induction 3 feux avec hotte à évauation vers l'extérieur"},
+        {file: "cuisine-cafetiere-maison-hossegor.jpeg", alt: "Bouilloire et cafetière Nespresso"},
+        {file: "entree-maison-plage-hossegor-angle-1.jpeg", alt: "Entrée lumineuse de la maison avec verrière"},
+        {file: "entree-maison-plage-hossegor-angle-2.jpeg", alt: "Entrée lumineuse de la maison, vue sur la cuisine"}
+        ]
+    },
+    {
+      id: "parentale",
+      title: "Chambre parentale",
+      photos: [
+        {file: "chambre-parentale-hossegor-angle-1.jpeg", alt: "Chambre parentale avec un lit de 160"},
+        {file: "chambre-parentale-hossegor-angle-2.jpeg", alt: "Chambre parentale avec un lit queen-size"},
+        {file: "chambre-parentale-hossegor-angle-3.jpeg", alt: "Chambre parentale équipée de grands placards"},
+        {file: "chambre-parentale-hossegor-douche-angle-1.jpeg", alt: "Espace douche privatif équipé d'un sèche serviette"},
+        {file: "chambre-parentale-hossegor-douche-angle-2.jpeg", alt: "Espace douche avec meuble de salle de bain"}
+      ]
+    },
+    {
+      id: "etage1",
+      title: "Salle de bain (étage)",
+      photos: [
+        {file: "salle-de-bain-maison-hossegor-angle-1.jpeg", alt: "Salle de bain à l'étage équipée d'un WC suspendu et d'un sèche serviette"},
+        {file: "salle-de-bain-maison-hossegor-angle-2.jpeg", alt: "Salle de bain équipée d'une douche dimension : 90x140cm"},
+        {file: "salle-de-bain-maison-hossegor-angle-3.jpeg", alt: "Salle de bain équipée d'une vasque 100cm avec miroir lumineux"}
+      ]
+    },
+    {
+      id: "etage2",
+      title: "Chambre adulte 1 (étage)",
+      photos: [
+        {file: "chambre-etage-adulte-1-hossegor-angle-1.jpeg", alt: "chambre avec un lit de 160cm lumineuse avec une grande armoire"},
+        {file: "chambre-etage-adulte-1-hossegor-angle-2.jpeg", alt: "Chambre avec un lit queen-size, équipée d'une moustiquaire"}
+      ]
+    },
+    {
+      id: "etage3",
+      title: "Chambre adulte 2 (étage)",
+      photos: [
+        {file: "chambre-etage-adulte-2-hossegor-angle-1.jpeg", alt: "chambre avec un lit de 160cm lumineuse avec une grande armoire"},
+        {file: "chambre-etage-adulte-2-hossegor-angle-2.jpeg", alt: "Chambre avec un lit queen-size, équipée d'une moustiquaire"}
+      ]
+    },
+    {
+      id: "enfants",
+      title: "Chambre enfants (étage)",
+      photos: [
+        {file: "chambre-enfants-hossegor-angle-1.jpeg", alt: "Chambre enfants avec lit superposé, 140cm en bas et 90cm en haut"},
+        {file: "chambre-enfants-hossegor-angle-2.jpeg", alt: "Chambre enfants aven rangements intégrés et moustiquaires"},
+        {file: "palier-etage-chambres-maison-hossegor-lac.jpeg", alt: "Chambre enfants vue du palier"},
+      ]
+    }
+  ] %>
+
+  <% sections.each do |section| %>
+    <section id="<%= section[:id] %>" class="mt-12 scroll-mt-20">
+      <h2 class="mt-6 text-xl md:text-2xl font-semibold"><%= section[:title] %></h2>
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
+        <% section[:photos].each do |p| %>
+          <%= image_tag p[:file],
+              class: "w-full h-48 md:h-56 object-cover rounded-xl shadow",
+              loading: "lazy",
+              alt: p[:alt] %>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+</section>
