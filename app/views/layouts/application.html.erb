@@ -36,15 +36,45 @@
   </head>
   <body class="min-h-screen flex flex-col bg-white text-gray-900">
     <!-- NAVBAR -->
-    <header class="border-b border-gray-100">
-      <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="/" class="text-lg font-semibold">La maison de Thita</a>
-        <div class="hidden md:flex items-center gap-6">
-          <a href="#atouts" class="hover:underline">La maison</a>
-          <a href="/gallery" class="hover:underline">Galerie</a>
-          <a href="/contact" class="hover:underline">Contact</a>
-          <a href="https://www.airbnb.fr/rooms/42052163" target="_blank" rel="noopener" class="inline-block rounded-xl px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-400">Disponibilités & tarifs</a>
-        </div>
+    <header class="<%= current_page?(root_path) ? 'absolute inset-x-0 top-0 z-10 bg-transparent text-white' : 'relative z-10 bg-blue-950 text-white' %>">
+      <nav class="container mx-auto px-4 py-4 relative flex items-center justify-between">
+
+        <!-- Logo : centré sur mobile, à gauche sur ordinateur -->
+        <%= link_to root_path,
+            class: "absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0" do %>
+          <%= image_tag "Logo-thita-blanc.svg",
+              alt: "THITA HOSSEGOR - Accueil",
+              class: "w-44 md:w-84 h-auto" %>
+        <% end %>
+
+        <!-- Menu ordinateur -->
+        <div class="hidden md:flex items-center gap-8">
+          <%= link_to "Galerie", "/gallery",
+              class: "text-lg font-medium hover:underline" %>
+
+        <%= link_to "NOUS CONTACTER", contact_path,
+            class: "rounded-full bg-blue-950 text-white px-6 py-3 font-medium hover:bg-blue-900 transition" %>
+      </div>
+
+      <!-- Menu mobile -->
+      <div class="flex md:hidden items-center justify-between w-full">
+
+        <details class="relative">
+          <summary class="list-none cursor-pointer text-white text-2xl" aria-label="Ouvrir le menu">
+            ☰
+          </summary>
+
+          <div class="absolute top-full left-0 mt-3 w-44 rounded-lg bg-blue-950 p-4 shadow-lg flex flex-col gap-4 text-white">
+            <%= link_to "Galerie", "/gallery" %>
+            <%= link_to "Nous contacter", contact_path %>
+          </div>
+        </details>
+
+        <%= link_to contact_path, aria: { label: "Nous contacter" },
+            class: "text-white text-2xl" do %>
+          ✉
+        <% end %>
+      </div>        
       </nav>
     </header>
 

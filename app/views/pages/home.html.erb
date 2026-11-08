@@ -1,15 +1,59 @@
 <% content_for :title, "Maison Hossegor — Location saisonnière" %>
 
 <!-- HERO -->
-<section>
-  <h1 class="sr-only">Thita Hossegor — maison de vacances, lac et centre-ville</h1>
+<!-- HERO -->
+<section class="relative h-screen overflow-hidden">
+
+  <h1 class="sr-only">
+    Thita Hossegor — maison de vacances, lac et centre-ville
+  </h1>
+
+  <!-- Photo de la maison -->
   <%= image_tag "thita-accueil.png",
-        alt: "Thita Hossegor — maison avec terrasse. Lac à 5 min à vélo, océan à 10 min à vélo, 9 voyageurs, 4 chambres, 2 salles de bain, terrasse et barbecue. www.thitahossegor.com",
-        class: "w-full h-auto" %>
-  <div class="container mx-auto px-4 py-8 flex flex-wrap gap-3">
-    <%= link_to "Disponibilités & tarifs", "https://www.airbnb.fr/rooms/42052163", target: "_blank", rel: "noopener", class: "rounded-xl bg-gray-900 text-white px-5 py-3 font-medium shadow hover:shadow-md" %>
-    <%= link_to "Nous contacter", contact_path, class: "rounded-xl border border-gray-900 px-5 py-3 font-medium hover:bg-gray-100" %>
+      alt: "Maison de vacances Thita Hossegor avec terrasse",
+      class: "absolute inset-0 w-full h-full object-cover object-center" %>
+
+  <!-- Dégradé pour améliorer la lisibilité -->
+  <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+  <!-- Pictogrammes -->
+  <div class="absolute bottom-8 inset-x-0 z-10 px-4 md:px-8 text-white">
+
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-y-6">
+
+      <% atouts = [
+        ["store.svg", "Centre-ville & lac", "À moins de 5 min à vélo"],
+        ["waves.svg", "Océan", "À moins de 10 min à vélo"],
+        ["users.svg", "9 voyageurs", ""],
+        ["bed-double.svg", "4 chambres", ""],
+        ["shower.svg", "2 salles de bain", ""],
+        ["barbecue.svg", "Terrasse &", "barbecue / plancha"]
+      ] %>
+
+      <% atouts.each_with_index do |(icone, titre, detail), index| %>
+
+        <div class="flex flex-col items-center text-center px-2 md:px-3
+                    <%= index > 0 ? 'md:border-l md:border-white/60' : '' %>">
+
+          <%= image_tag icone,
+              alt: "",
+              class: "w-9 h-9 md:w-14 md:h-14 mb-3 brightness-0 invert" %>
+
+          <p class="text-[10px] md:text-sm font-semibold uppercase leading-snug">
+            <%= titre %>
+
+            <% if detail.present? %>
+              <span class="block"><%= detail %></span>
+            <% end %>
+          </p>
+
+        </div>
+
+      <% end %>
+
+    </div>
   </div>
+
 </section>
 
 <!-- PRESENTATION -->
