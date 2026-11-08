@@ -1,18 +1,14 @@
 <% content_for :title, "Maison Hossegor — Location saisonnière" %>
 
 <!-- HERO -->
-<section class="relative">
-  <div class="absolute inset-0">
-    <div class="h-full w-full bg-cover bg-center" style="background-image: url('<%= asset_path('hero.jpeg') %>');"></div>
-    <div class="absolute inset-0 bg-black/40"></div>
-  </div>
-  <div class="relative container mx-auto px-4 py-24 md:py-40 text-white">
-    <h1 class="text-3xl md:text-5xl font-bold max-w-3xl">Maison lac, centre-ville Hossegor</h1>
-    <p class="mt-4 md:text-lg max-w-2xl">Capacité 9 personnes • 4 chambres • 2 salles de bain • Parking</p>
-    <div class="mt-8 flex flex-wrap gap-3">
-      <%= link_to "Disponibilités & tarifs", "https://www.airbnb.fr/rooms/42052163", target: "_blank", rel: "noopener", class: "rounded-xl bg-white text-gray-900 px-5 py-3 font-medium shadow hover:shadow-md" %>
-      <%= link_to "Nous contacter", contact_path, class: "rounded-xl bg-transparent border border-white px-5 py-3 font-medium hover:bg-white/10" %>
-    </div>
+<section>
+  <h1 class="sr-only">Thita Hossegor — maison de vacances, lac et centre-ville</h1>
+  <%= image_tag "thita-accueil.png",
+        alt: "Thita Hossegor — maison avec terrasse. Lac à 5 min à vélo, océan à 10 min à vélo, 9 voyageurs, 4 chambres, 2 salles de bain, terrasse et barbecue. www.thitahossegor.com",
+        class: "w-full h-auto" %>
+  <div class="container mx-auto px-4 py-8 flex flex-wrap gap-3">
+    <%= link_to "Disponibilités & tarifs", "https://www.airbnb.fr/rooms/42052163", target: "_blank", rel: "noopener", class: "rounded-xl bg-gray-900 text-white px-5 py-3 font-medium shadow hover:shadow-md" %>
+    <%= link_to "Nous contacter", contact_path, class: "rounded-xl border border-gray-900 px-5 py-3 font-medium hover:bg-gray-100" %>
   </div>
 </section>
 
