@@ -111,15 +111,57 @@
   </div>
 </section>
 
-<!-- BLOC CTA FINAL -->
-<section class="bg-gray-50 py-4">
-  <div class="container mx-auto px-4 text-center">
-    <h3 class="text-xl md:text-2xl font-semibold">Vous souhaitez réserver ?</h3>
-    <p class="text-gray-600 mt-2">Consultez les disponibilités sur Airbnb ou Abritel, <br>
-et contactez-nous directement pour profiter du meilleur prix sans frais de plateforme.</p>
-    <div class="mt-6 flex justify-center gap-3">
-      <%= link_to "Airbnb", "https://www.airbnb.fr/rooms/42052163", target: "_blank", rel: "noopener", class: "rounded-xl bg-black text-white px-5 py-3 font-medium" %>
-      <%= link_to "Abritel", "https://www.abritel.fr/location-vacances/p46967095", target: "_blank", rel: "noopener", class: "rounded-xl border border-gray-300 px-5 py-3 font-medium hover:bg-white" %>
+
+
+
+<!-- BLOC CTA FINAL : RÉSERVATION EN DIRECT -->
+<section class="bg-white py-12 md:py-16 px-4">
+  <div class="mx-auto max-w-2xl text-center">
+
+    <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">
+      Réservez en direct, au meilleur tarif
+    </h2>
+
+    <p class="mt-5 text-base text-gray-600 leading-relaxed">
+      Profitez de notre maison à Hossegor à un tarif plus avantageux
+      en réservant directement auprès de nous, sans frais de plateforme.
+    </p>
+
+    <p class="mt-4 text-sm md:text-base text-gray-600">
+      Consultez les disponibilités sur Airbnb, puis contactez-nous
+      pour organiser votre séjour.
+    </p>
+
+    <div class="mt-7 mx-auto max-w-md flex flex-col gap-3">
+
+      <%= link_to contact_path,
+          class: "flex items-center justify-center gap-3 rounded-xl bg-blue-950 px-5 py-4 text-base font-medium text-white hover:bg-blue-900 transition" do %>
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="20" height="20" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-10 6L2 7"/>
+        </svg>
+
+        <span>Nous contacter pour réserver</span>
+      <% end %>
+
+      <%= link_to "Voir les disponibilités sur Airbnb",
+          "https://www.airbnb.fr/rooms/42052163",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          class: "block rounded-xl border border-gray-300 px-5 py-4 text-base font-medium text-gray-900 hover:bg-gray-50 transition" %>
+
     </div>
+
+    <p class="mt-6 text-xs md:text-sm text-gray-500">
+      Aucun paiement sur le site · Échange direct avec les propriétaires
+    </p>
+
   </div>
 </section>
+
+
